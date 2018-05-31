@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{CAF56C62-7CA8-47B6-90A6-CE7381841046}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>OPCClient</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DefineConstants>TRACE</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>%24this.Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="OpcNetApi" />
+    <Reference Include="OpcComnCtrls" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="OpcNetApi.Com" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.SqlServer.Smo" />
+    <Reference Include="System.Data" />
+    <Reference Include="Microsoft.ExceptionMessageBox" />
+    <Reference Include="Excel" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="OPCClient.Properties\Resources.Designer.cs" />
+    <Compile Include="OPCClient.Properties\Settings.Designer.cs" />
+    <Compile Include="OPCClient\BrowseFiltersChangedCallback.cs" />
+    <Compile Include="OPCClient\BrowseFiltersDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPCClient\BrowseItemsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPCClient\BrowseTreeCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OPCClient\ChoiceOPCServersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPCClient\ChoiceTagsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPCClient\ConnectionString.cs" />
+    <Compile Include="OPCClient\EditOPCServerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPCClient\EditTagForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPCClient\ElementPicked_EventHandler.cs" />
+    <Compile Include="OPCClient\ElementSelected_EventHandler.cs" />
+    <Compile Include="OPCClient\ErrCode.cs" />
+    <Compile Include="OPCClient\ErrorEventArgs.cs" />
+    <Compile Include="OPCClient\InitData.cs" />
+    <Compile Include="OPCClient\ItemPicked_EventHandler.cs" />
+    <Compile Include="OPCClient\Items.cs" />
+    <Compile Include="OPCClient\ItemsData.cs" />
+    <Compile Include="OPCClient\JoinForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPCClient\MyDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OPCClient\MyTextWriterTraceListener.cs" />
+    <Compile Include="OPCClient\OdbcWrapper.cs" />
+    <Compile Include="OPCClient\OPCclient.cs" />
+    <Compile Include="OPCClient\OPCClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPCClient\options_changed.cs" />
+    <Compile Include="OPCClient\Program.cs" />
+    <Compile Include="OPCClient\PropertyFiltersCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OPCClient\PropertyListViewCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OPCClient\ReadDataEventArgs.cs" />
+    <Compile Include="OPCClient\ReadDataXmlEventArgs.cs" />
+    <Compile Include="OPCClient\ServerPicked_EventHandler.cs" />
+    <Compile Include="OPCClient\Settings.cs" />
+    <Compile Include="OPCClient\SettingsDataBase.cs" />
+    <Compile Include="OPCClient\SettingsDefaultOPCServer.cs" />
+    <Compile Include="OPCClient\SettingsLoader.cs" />
+    <Compile Include="OPCClient\SettingsOPCServer.cs" />
+    <Compile Include="OPCClient\SqlServerSmo.cs" />
+    <Compile Include="OPCClient\TagListGridCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OPCClient\TypeCnfFile.cs" />
+    <Compile Include="OPCClient\TypeRW.cs" />
+    <Compile Include="OPCClient\VarData.cs" />
+    <Compile Include="OPCClient\WorkThread.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="xmlsettings_changed.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="OPCClient.Properties\Resources.resx" />
+    <EmbeddedResource Include="OPCClient\Browse.BrowseTreeCtrl.resx" />
+    <EmbeddedResource Include="OPCClient\Browse.PropertyFiltersCtrl.resx" />
+    <EmbeddedResource Include="OPCClient\Browse.PropertyListViewCtrl.resx" />
+    <EmbeddedResource Include="OPCClient\BrowseItemsDlg.resx" />
+    <EmbeddedResource Include="OPCClient\ChoiceOPCServersForm.resx" />
+    <EmbeddedResource Include="OPCClient\ChoiceTagsForm.resx" />
+    <EmbeddedResource Include="OPCClient\EditOPCServerForm.resx" />
+    <EmbeddedResource Include="OPCClient\EditTagForm.resx" />
+    <EmbeddedResource Include="OPCClient\JoinForm.resx">
+      <DependentUpon>JoinForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OPCClient\OPCClientForm.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OPCClient.Properties\Settings.settings" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%24this.Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="%24this.Icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -426,8 +426,8 @@ namespace OPCClient
 					this._server.Connect(url, new ConnectData(new System.Net.NetworkCredential("root","rootnakyn")));
 				}
 				catch (System.Exception var_1_5C)
-				{
-					this.ErrCodeParse(ErrCode.serverNoAccess, "Connect");
+                {
+                    this.ErrCodeParse(ErrCode.serverNoAccess, "Connect");
 					result = 3;
 					return result;
 				}
